@@ -1,7 +1,8 @@
 Supported tags and respective `Dockerfile` links:
 
 ・latest ([versions/0.x/Dockerfile](https://github.com/pottava/docker-scipy/blob/master/versions/0.x/Dockerfile))  
-・0.18 ([versions/0.x/Dockerfile](https://github.com/pottava/docker-scipy/blob/master/versions/0.x/Dockerfile))
+・0.18 ([versions/0.x/Dockerfile](https://github.com/pottava/docker-scipy/blob/master/versions/0.x/Dockerfile))  
+・0.18-notebook ([jupyter/versions/4.2/Dockerfile](https://github.com/pottava/docker-scipy/blob/master/jupyter/versions/4.2/Dockerfile))
 
 
 ### Usage
@@ -28,4 +29,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> print(numpy.__version__)
 1.11.3
 >>>
+```
+
+With Jupyter notebook:
+
+```
+$ docker run --rm -p 80:8888 pottava/scipy:0.18-notebook
 ```
