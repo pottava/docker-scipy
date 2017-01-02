@@ -1,6 +1,7 @@
 # SciPy v0.18.1 & NumPy v1.11.3
 #
 # docker run --rm -it pottava/scipy:0.18
+# docker run --rm pottava/scipy:0.18 -c 'import scipy; print(scipy.__version__)'
 # docker run --rm pottava/scipy:0.18 -c 'import scipy; scipy.show_config()'
 
 FROM alpine:3.5
@@ -17,7 +18,6 @@ RUN apk --no-cache add openblas lapack libstdc++ python3 \
     && ln -s /usr/include/locale.h /usr/include/xlocale.h \
     && pip3 install scipy \
     && apk del --purge -r build-deps \
-    && rm -r /root/.cache
+    && rm -r /root/.cache /usr/include/xlocale.h
 
 ENTRYPOINT ["/usr/bin/python3"]
-CMD ["-c", "'import scipy; print(scipy.__version__)'"]
