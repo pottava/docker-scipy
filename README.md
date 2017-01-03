@@ -10,13 +10,13 @@ Supported tags and respective `Dockerfile` links:
 SciPy was installed with OpenBLAS & LAPACK.
 
 ```
-$ docker run --rm pottava/scipy:0.18 -c 'import scipy; scipy.show_config()'
+$ docker run --rm pottava/scipy -c 'import scipy; scipy.show_config()'
 ```
 
 Using the Python default interpreter:
 
 ```
-$ docker run --rm -it pottava/scipy:0.18
+$ docker run --rm -it pottava/scipy
 Python 3.5.2 (default, Dec 22 2016, 10:15:38)
 [GCC 6.2.1 20160822] on linux
 Type "help", "copyright", "credits" or "license" for more information.
@@ -40,5 +40,5 @@ $ docker run --rm -it -p 80:8888 pottava/scipy:0.18-notebook
 With Jupyter notebook and Pandas:
 
 ```
-$ docker run --rm -it -p 80:8888 pottava/pandas:0.19
+$ docker run --rm -it -p 80:8888 pottava/pandas
 ```
