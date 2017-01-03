@@ -34,5 +34,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 With Jupyter notebook:
 
 ```
-$ docker run --rm -p 80:8888 pottava/scipy:0.18-notebook
+$ docker run --rm -it -p 80:8888 pottava/scipy:0.18-notebook
+```
+
+With Jupyter notebook and Pandas:
+
+```
+$ docker run --rm -it -p 80:8888 pottava/pandas:0.19
 ```
