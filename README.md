@@ -31,6 +31,12 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
+With iPython:
+
+```
+$ docker run --rm -it pottava/scipy:0.18-notebook ipython
+```
+
 With Jupyter notebook:
 
 ```

@@ -1,5 +1,6 @@
 # SciPy with Jupyter notebook
 #
+# docker run --rm -it pottava/scipy:0.18-notebook ipython
 # docker run --rm -it -p 80:8888 pottava/scipy:0.18-notebook
 
 FROM pottava/scipy:0.18

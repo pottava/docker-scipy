@@ -1,5 +1,6 @@
 # Pandas with SciPy & Jupyter notebook
 #
+# docker run --rm -it pottava/pandas:0.19 ipython
 # docker run --rm -it -p 80:8888 pottava/pandas:0.19
 
 FROM pottava/scipy:0.18-notebook
