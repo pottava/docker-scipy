@@ -8,7 +8,7 @@ Supported tags and respective `Dockerfile` links:
 Jupyter notebook with Pandas:
 
 ```
-$ docker run --rm -it -p 80:8888 pottava/pandas
+$ docker run --rm -it -p 80:8888 pottava/pandas ipython
 ```
 
 Using the Python default interpreter:
@@ -27,4 +27,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> print(matplotlib.__version__)
 2.0.0rc2
 >>>
+```
+
+With Jupyter notebook:
+
+```
+$ docker run --rm -it -p 80:8888 pottava/pandas
 ```
