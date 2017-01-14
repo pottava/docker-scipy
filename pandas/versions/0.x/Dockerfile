@@ -9,7 +9,13 @@ ENV MATPLOTLIB_VERSION=2.0.0rc2 \
     PANDAS_VERSION=0.19.2
 
 RUN apk --no-cache add freetype \
-    && apk --no-cache add --virtual build-deps g++ python3-dev freetype-dev \
+    && apk --no-cache add --virtual build-deps g++ python3-dev \
+            lapack-dev g++ gfortran freetype-dev \
+    && ln -s /usr/bin/python3 /usr/bin/python \
+    && ln -s /usr/include/locale.h /usr/include/xlocale.h \
+
+    # Install NumPy again for some libraries
+    && pip3 install "numpy == 1.11.3" \
 
     # Install Matplotlib for 2D plotting
     && pip3 install "matplotlib == ${MATPLOTLIB_VERSION}" \
