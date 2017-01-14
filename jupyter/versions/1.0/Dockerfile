@@ -8,10 +8,20 @@ FROM pottava/scipy:0.18
 ENV JUPYTER_VERSION=1.0.0
 
 RUN apk --no-cache add --virtual build-deps g++ python3-dev \
+
+    # Install Tini as a init system for jupyter containers
     && apk --no-cache add tini \
+
+    # Install Jupyter
     && pip3 install "jupyter == ${JUPYTER_VERSION}" \
+
+    # Clean up
+    && find / -type d -name tests -depth -exec rm -rf {} \; \
+    && find / -type d -name test -depth -exec rm -rf {} \; \
+    && find / -type d -name \__pycache__ -depth -exec rm -rf {} \; \
+    && find / -type d -name '*.egg-info' -depth -exec rm -rf {} \; \
     && apk del --purge -r build-deps \
-    && rm -r /root/.cache
+    && rm -rf /root/.cache
 
 WORKDIR /root/notebook
 

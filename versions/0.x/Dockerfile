@@ -6,19 +6,23 @@
 
 FROM alpine:3.5
 
-ENV SCIPY_VERSION=0.18.1
-
-ENV BLAS=/usr/lib/libblas.so \
+ENV SCIPY_VERSION=0.18.1 \
+    BLAS=/usr/lib/libblas.so \
     LAPACK=/usr/lib/liblapack.so
 
 RUN apk --no-cache add openblas lapack libstdc++ python3 ca-certificates \
-    && apk --no-cache add --virtual build-deps \
-        lapack-dev python3-dev g++ gfortran \
-    && pip3 install --upgrade pip setuptools \
-    && ln -s /usr/bin/python3 /usr/bin/python \
+    && apk --no-cache add --virtual build-deps lapack-dev python3-dev g++ gfortran \
     && ln -s /usr/include/locale.h /usr/include/xlocale.h \
+
+    # Install SciPy
     && pip3 install "scipy == ${SCIPY_VERSION}" \
+
+    # Clean up
+    && find / -type d -name tests -depth -exec rm -rf {} \; \
+    && find / -type d -name test -depth -exec rm -rf {} \; \
+    && find / -type d -name \__pycache__ -depth -exec rm -rf {} \; \
+    && find / -type d -name '*.egg-info' -depth -exec rm -rf {} \; \
     && apk del --purge -r build-deps \
-    && rm -r /root/.cache /usr/include/xlocale.h
+    && rm -rf /root/.cache /usr/include/xlocale.h
 
 ENTRYPOINT ["/usr/bin/python3"]
