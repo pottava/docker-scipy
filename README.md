@@ -2,7 +2,7 @@ Supported tags and respective `Dockerfile` links:
 
 ・latest ([versions/0.x/Dockerfile](https://github.com/pottava/docker-scipy/blob/master/versions/0.x/Dockerfile))  
 ・0.18 ([versions/0.x/Dockerfile](https://github.com/pottava/docker-scipy/blob/master/versions/0.x/Dockerfile))  
-・0.18-notebook ([jupyter/versions/4.2/Dockerfile](https://github.com/pottava/docker-scipy/blob/master/jupyter/versions/4.2/Dockerfile))
+・0.18-notebook ([jupyter/versions/1.0/Dockerfile](https://github.com/pottava/docker-scipy/blob/master/jupyter/versions/1.0/Dockerfile))
 
 
 ### Usage
