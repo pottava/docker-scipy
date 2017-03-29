@@ -1,12 +1,12 @@
-# SciPy v0.18.1 & NumPy v1.11.3
+# SciPy v0.19 & NumPy v1.12.1
 #
-# docker run --rm -it pottava/scipy:0.18
-# docker run --rm pottava/scipy:0.18 -c 'import scipy; print(scipy.__version__)'
-# docker run --rm pottava/scipy:0.18 -c 'import scipy; scipy.show_config()'
+# docker run --rm -it pottava/scipy:0.19
+# docker run --rm pottava/scipy:0.19 -c 'import scipy; print(scipy.__version__)'
+# docker run --rm pottava/scipy:0.19 -c 'import scipy; scipy.show_config()'
 
 FROM alpine:3.5
 
-ENV SCIPY_VERSION=0.18.1 \
+ENV SCIPY_VERSION=0.19.0 \
     BLAS=/usr/lib/libblas.so \
     LAPACK=/usr/lib/liblapack.so
 
