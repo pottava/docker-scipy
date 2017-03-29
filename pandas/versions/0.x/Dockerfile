@@ -3,9 +3,10 @@
 # docker run --rm -it pottava/pandas:0.19 ipython
 # docker run --rm -it -p 80:8888 pottava/pandas:0.19
 
-FROM pottava/scipy:0.18-notebook
+FROM pottava/scipy:0.19-note
 
-ENV MATPLOTLIB_VERSION=2.0.0rc2 \
+ENV NUMPY_VERSION=1.12.1 \
+    MATPLOTLIB_VERSION=2.0.0 \
     PANDAS_VERSION=0.19.2
 
 RUN apk --no-cache add freetype \
@@ -15,7 +16,7 @@ RUN apk --no-cache add freetype \
     && ln -s /usr/include/locale.h /usr/include/xlocale.h \
 
     # Install NumPy again for some libraries
-    && pip3 install "numpy == 1.11.3" \
+    && pip3 install "numpy == ${NUMPY_VERSION}" \
 
     # Install Matplotlib for 2D plotting
     && pip3 install "matplotlib == ${MATPLOTLIB_VERSION}" \

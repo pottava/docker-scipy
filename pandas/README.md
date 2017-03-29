@@ -25,7 +25,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 >>> import matplotlib
 >>> print(matplotlib.__version__)
-2.0.0rc2
+2.0.0
 >>>
 ```
 
